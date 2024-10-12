@@ -1,13 +1,13 @@
 # Start by building the application.
-FROM golang:1.23 AS build
+FROM golang:1.22 AS build
 
 WORKDIR /go/src/app
 COPY . .
 
 RUN go mod download
-RUN CGO_ENABLED=0 go build -o /go/bin/publish
+RUN CGO_ENABLED=0 make build
 
 # Now copy it into our base image.
 FROM gcr.io/distroless/static-debian11
-COPY --from=build /go/bin/publish /
-ENTRYPOINT ["/publish"]
+COPY --from=build /go/bin/rt /
+ENTRYPOINT ["/rt"]
