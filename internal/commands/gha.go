@@ -9,7 +9,7 @@ import (
 
 	"github.com/hashicorp/cli"
 	svchost "github.com/hashicorp/terraform-svchost"
-	"github.com/registry-tools/publish/internal/publish"
+	"github.com/registry-tools/rt-cli/internal/publish"
 	sdk "github.com/registry-tools/rt-sdk"
 	"github.com/sethvargo/go-githubactions"
 )

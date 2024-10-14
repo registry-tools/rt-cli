@@ -1,4 +1,4 @@
-module github.com/registry-tools/publish
+module github.com/registry-tools/rt-cli
 
 go 1.22.5
 

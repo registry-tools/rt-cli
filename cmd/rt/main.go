@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/hashicorp/cli"
-	"github.com/registry-tools/publish/internal/commands"
+	"github.com/registry-tools/rt-cli/internal/commands"
 )
 
 var version = "0.1.0-dev"

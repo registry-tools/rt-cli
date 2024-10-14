@@ -5,7 +5,7 @@ import (
 
 	"github.com/andreyvit/diff"
 	svchost "github.com/hashicorp/terraform-svchost"
-	"github.com/registry-tools/publish/internal/publish"
+	"github.com/registry-tools/rt-cli/internal/publish"
 )
 
 func TestHumanizeBytes(t *testing.T) {

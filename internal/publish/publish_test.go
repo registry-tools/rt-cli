@@ -11,8 +11,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/registry-tools/publish/internal/module"
-	"github.com/registry-tools/publish/internal/publish"
+	"github.com/registry-tools/rt-cli/internal/module"
+	"github.com/registry-tools/rt-cli/internal/publish"
 	sdk "github.com/registry-tools/rt-sdk"
 )
 

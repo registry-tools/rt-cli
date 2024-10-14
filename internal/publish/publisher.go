@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/registry-tools/publish/internal/module"
+	"github.com/registry-tools/rt-cli/internal/module"
 
 	sdk "github.com/registry-tools/rt-sdk"
 	"github.com/registry-tools/rt-sdk/generated/api"

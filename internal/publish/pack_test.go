@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/registry-tools/publish/internal/publish"
+	"github.com/registry-tools/rt-cli/internal/publish"
 )
 
 func TestPackAsFile(t *testing.T) {

@@ -15,9 +15,9 @@ import (
 	svchost "github.com/hashicorp/terraform-svchost"
 	sdk "github.com/registry-tools/rt-sdk"
 
-	"github.com/registry-tools/publish/internal/module"
-	"github.com/registry-tools/publish/internal/publish"
-	"github.com/registry-tools/publish/internal/summarize"
+	"github.com/registry-tools/rt-cli/internal/module"
+	"github.com/registry-tools/rt-cli/internal/publish"
+	"github.com/registry-tools/rt-cli/internal/summarize"
 )
 
 // DefaultHostname is the default hostname for Registry Tools Cloud
