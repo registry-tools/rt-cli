@@ -8,7 +8,7 @@ import (
 	"github.com/registry-tools/rt-cli/internal/module"
 
 	sdk "github.com/registry-tools/rt-sdk"
-	"github.com/registry-tools/rt-sdk/generated/api"
+	"github.com/registry-tools/rt-sdk/generated/models"
 )
 
 // Publisher publishes modules to the registry.
@@ -40,20 +40,14 @@ func (p Publisher) Publish(ctx context.Context, info module.Module, reader io.Re
 		return nil, err
 	}
 
-	moduleBody := api.NewTerraformModuleVersionsPostRequestBody_module()
+	moduleBody := models.NewTerraformModuleVersion()
 	moduleBody.SetName(&info.Name)
 	moduleBody.SetNamespace(&info.Namespace)
 	moduleBody.SetSystem(&info.System)
 	moduleBody.SetVersion(&info.Version)
+	moduleBody.SetArchiveId(signedID)
 
-	moduleMeta := api.NewTerraformModuleVersionsPostRequestBody_meta()
-	moduleMeta.SetArchiveId(signedID)
-
-	moduleData := api.NewTerraformModuleVersionsPostRequestBody()
-	moduleData.SetModule(moduleBody)
-	moduleData.SetMeta(moduleMeta)
-
-	response, err := p.SDK.Api().TerraformModuleVersions().PostAsTerraformModuleVersionsPostResponse(ctx, moduleData, nil)
+	response, err := p.SDK.Api().TerraformModuleVersions().PostAsTerraformModuleVersionsPostResponse(ctx, moduleBody, nil)
 	if err != nil {
 		return nil, fmt.Errorf("failed to create terraform module: %w", err)
 	}

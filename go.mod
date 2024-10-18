@@ -9,7 +9,7 @@ require (
 	github.com/hashicorp/go-hclog v1.6.3
 	github.com/hashicorp/go-slug v0.15.0
 	github.com/hashicorp/terraform-svchost v0.1.1
-	github.com/registry-tools/rt-sdk v0.0.0-20241012132944-3b77eb147300
+	github.com/registry-tools/rt-sdk v0.0.0-20241018032220-ddaf2285da4f
 	github.com/sethvargo/go-githubactions v1.2.0
 )
 

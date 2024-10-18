@@ -91,6 +91,10 @@ github.com/posener/complete v1.2.3 h1:NP0eAhjcjImqslEwo/1hq7gpajME0fTLTezBKDqfXq
 github.com/posener/complete v1.2.3/go.mod h1:WZIdtGGp+qx0sLrYKtIRAruyNpv6hFCicSgv7Sy7s/s=
 github.com/registry-tools/rt-sdk v0.0.0-20241012132944-3b77eb147300 h1:Ss2Zpo5ray2AtvTkMw7XVKLY1aqNoy5k+5naOU1v2cM=
 github.com/registry-tools/rt-sdk v0.0.0-20241012132944-3b77eb147300/go.mod h1:tks7Qe17zfu1tPR4MTj3PCdXibs7/L7SmrWVdNIyrd8=
+github.com/registry-tools/rt-sdk v0.0.0-20241017130526-4e04e9a50d51 h1:4j7VbMu8AOxt9ES/JbU25t0ly93MH4LqWFFJGvumIuQ=
+github.com/registry-tools/rt-sdk v0.0.0-20241017130526-4e04e9a50d51/go.mod h1:tks7Qe17zfu1tPR4MTj3PCdXibs7/L7SmrWVdNIyrd8=
+github.com/registry-tools/rt-sdk v0.0.0-20241018032220-ddaf2285da4f h1:T1NaJ+TYLCSJB/vHbIcLAkgG8OCPOdXAPpIPbsRf2ik=
+github.com/registry-tools/rt-sdk v0.0.0-20241018032220-ddaf2285da4f/go.mod h1:tks7Qe17zfu1tPR4MTj3PCdXibs7/L7SmrWVdNIyrd8=
 github.com/rogpeppe/go-internal v1.13.1 h1:KvO1DLK/DRN07sQ1LQKScxyZJuNnedQ5/wKSR38lUII=
 github.com/rogpeppe/go-internal v1.13.1/go.mod h1:uMEvuHeurkdAXX61udpOXGD/AzZDWNMNyH2VO9fmH0o=
 github.com/sergi/go-diff v1.3.1 h1:xkr+Oxo4BOQKmkn/B9eMK0g5Kg/983T9DqqPHwYqD+8=
