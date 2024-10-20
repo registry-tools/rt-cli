@@ -49,7 +49,7 @@ func (m ModuleArgs) Module() module.Module {
 
 func (c *publishCommand) Help() string {
 	return `
-Usage: rt publish [options] <source_directory>
+Usage: rt publish [options]
 
   Publish a module to the registry.
 
@@ -121,25 +121,6 @@ func moduleArgsFromCWD() (*ModuleArgs, error) {
 	}, nil
 }
 
-func (c *publishCommand) sdkFromEnvironment() (sdk.SDK, error) {
-	host := os.Getenv("REGISTRY_TOOLS_HOSTNAME")
-	if host == "" {
-		host = DefaultHostname
-	}
-
-	var result sdk.SDK
-	var err error
-	if envToken := os.Getenv("REGISTRY_TOOLS_TOKEN"); envToken != "" {
-		result, err = sdk.NewSDKWithAccessToken(host, envToken)
-	} else if envClientID := os.Getenv("REGISTRY_TOOLS_CLIENT_ID"); envClientID != "" {
-		result, err = sdk.NewSDK(host, envClientID, os.Getenv("REGISTRY_TOOLS_CLIENT_SECRET"))
-	} else {
-		err = ErrLoginRequired
-	}
-
-	return result, err
-}
-
 func (c *publishCommand) requireArgumentOrExit(name, value string) {
 	if value == "" {
 		log.Printf("[ERROR] Required argument %q is missing", name)
@@ -174,8 +155,7 @@ func (c *publishCommand) Run(args []string) int {
 	c.requireArgumentOrExit("name", ma.Name)
 	c.requireArgumentOrExit("system", ma.System)
 
-	// Env config
-	sdkclient, err := c.sdkFromEnvironment()
+	sdkclient, err := GetSDK()
 	if err != nil {
 		log.Printf("[ERROR] Failed to create SDK client: %s", err)
 		return 127

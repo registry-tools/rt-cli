@@ -4,13 +4,15 @@ go 1.23
 
 require (
 	github.com/andreyvit/diff v0.0.0-20170406064948-c7f18ee00883
+	github.com/cli/oauth v1.2.0
 	github.com/fatih/color v1.17.0
 	github.com/hashicorp/cli v1.1.6
 	github.com/hashicorp/go-hclog v1.6.3
 	github.com/hashicorp/go-slug v0.15.0
 	github.com/hashicorp/terraform-svchost v0.1.1
-	github.com/registry-tools/rt-sdk v0.0.0-20241018032220-ddaf2285da4f
+	github.com/registry-tools/rt-sdk v0.0.0-20241020172539-e4c9f228c879
 	github.com/sethvargo/go-githubactions v1.2.0
+	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (
@@ -22,6 +24,7 @@ require (
 	github.com/armon/go-radix v1.0.0 // indirect
 	github.com/bgentry/speakeasy v0.2.0 // indirect
 	github.com/cjlapao/common-go v0.0.41 // indirect
+	github.com/cli/browser v1.3.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/go-logr/logr v1.4.2 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
@@ -57,5 +60,4 @@ require (
 	golang.org/x/oauth2 v0.23.0 // indirect
 	golang.org/x/sys v0.26.0 // indirect
 	golang.org/x/text v0.19.0 // indirect
-	gopkg.in/yaml.v3 v3.0.1 // indirect
 )

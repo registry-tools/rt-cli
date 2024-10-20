@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"io"
+	"strings"
 
 	"github.com/registry-tools/rt-cli/internal/module"
 
@@ -37,6 +38,9 @@ func (v ModuleVersion) Module(namespace string) module.Module {
 func (p Publisher) Publish(ctx context.Context, info module.Module, reader io.ReadSeeker) (*ModuleVersion, error) {
 	signedID, err := p.SDK.UploadFileArchive(ctx, fmt.Sprintf("%s-%s-%s", info.Name, info.System, info.Version), reader)
 	if err != nil {
+		if strings.Contains(err.Error(), "Not found") {
+			return nil, fmt.Errorf("authentication failed, check your credentials or re-run 'rt login'")
+		}
 		return nil, err
 	}
 
@@ -49,7 +53,10 @@ func (p Publisher) Publish(ctx context.Context, info module.Module, reader io.Re
 
 	response, err := p.SDK.Api().TerraformModuleVersions().PostAsTerraformModuleVersionsPostResponse(ctx, moduleBody, nil)
 	if err != nil {
-		return nil, fmt.Errorf("failed to create terraform module: %w", err)
+		if sdk.IsNotFoundError(err) {
+			return nil, fmt.Errorf("namespace does not exist or you do not have permission to publish to it")
+		}
+		return nil, sdk.FormatAPIError(err)
 	}
 
 	data := response.GetData()
