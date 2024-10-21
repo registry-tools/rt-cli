@@ -24,8 +24,12 @@ func GetSDK() (sdk.SDK, error) {
 	token, configuredByUserConfig = userconfig.GetHostToken(host)
 	envClientID := os.Getenv("REGISTRY_TOOLS_CLIENT_ID")
 	envClientSecret := os.Getenv("REGISTRY_TOOLS_CLIENT_SECRET")
+	envToken := os.Getenv("REGISTRY_TOOLS_TOKEN")
 
-	if envClientID != "" && envClientSecret != "" {
+	if envToken != "" {
+		log.Printf("[TRACE] Initializing SDK using token from environment")
+		return sdk.NewSDKWithAccessToken(host, envToken)
+	} else if envClientID != "" && envClientSecret != "" {
 		log.Printf("[TRACE] Initializing SDK using client ID and secret from environment")
 		return sdk.NewSDK(host, envClientID, envClientSecret)
 	} else if configuredByUserConfig {
